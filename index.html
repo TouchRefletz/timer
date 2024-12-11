@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="alarm white.png">
+</head>
+<body>
+    <section>
+        <h1 id="time" class="reset">Tempo</h1>
+        <div id="buttonsDiv">
+            <button id="actionButton" class="button" aria-label="Iniciar cronômetro"><img src="play.png" alt="Iniciar" class="icon">Iniciar cronômetro</button>
+
+            <button id="pauseButton" class="button hidden" aria-label="Pausar cronômetro"><img src="pause.png" alt="Pausar" class="icon">Pausar cronômetro</button>
+
+            <button id="changeModeButton" class="button" aria-label="Alterar modo de exibição (claro ou escuro)"><img src="sun.png" alt="Mudar modo" class="icon">Modo Claro</button>
+
+            <button id="alarmButton" class="button" aria-label="Configurar alarmes"><img src="alarm.png" alt="Mudar modo" class="icon">Configurar Alarmes</button>
+        </div>
+        <a href="creditos.html" style="margin: 30px;">Créditos</a>
+        <div id="alarms" class="hidden">
+            <div id="alarmsDiv">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Adicionar" id="addAlarmButton" class="icon" aria-label="Adicionar novo alarme">
+                <input id="min" type="number" min="1" max="999" class="inputTime">
+                <p class="text">:</p>
+                <input id="sec" type="number" min="1" max="60" class="inputTime">
+                <p class="text">:</p>
+                <input id="mil" type="number" min="1" max="1000" class="inputTime">
+            </div>
+        </div>
+        <div id="getAlarms">
+            <p class="text">Alarmes Adicionados:</p>
+            <div id="existingAlarms">
+            </div>
+        </div>
+        <div id="registry">
+            <p class="text" id="title-registry">Histórico</p>
+            <div id="actionsRegistry">
+            </div>
+        </div>
+        <audio src="pause.mp3" id="pauseAudio"></audio>
+        <audio src="reset.wav" id="resetAudio"></audio>
+        <audio src="alarm.wav" id="alarmAudio"></audio>
+        <audio src="sucess.wav" id="sucessAudio"></audio>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 750px) {
+    #buttonsDiv {
+        flex-direction: column;
+    }  
+    #addAlarmButton {
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    #alarmsDiv {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px) {
+    .text { 
+        font-size: 15px;
+    }
+
+    .text-small {
+        font-size: 10px;
+    }
+
+    #time { 
+        word-break: break-all;
+    }
+}
+
+:root {
+    --back: rgb(22, 22, 43);
+    --text: white;
+    --border: white;
+    --inverseText: black;
+    --inverseBack: white;
+    --resetTime: white;
+    --pauseTime: yellow;
+    --runningTime: limegreen;
+    --iconBefore: 1;
+    --iconAfter: 0.5;
+}
+
+.text {
+    font-family: "Inter", serif;
+    font-size: 25px;
+    color: var(--text);
+}
+
+.text-small {
+    margin: 5px 0px;
+    font-family: "Inter", serif;
+    font-size: 15px;
+    color: var(--text);
+}
+
+#title-registry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#getAlarms {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#registry {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputTime {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    padding: 0px 10px;
+    color: var(--text);
+    margin: 0px 10px 0px 10px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+body {
+    background-color: var(--back);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+}
+
+#time {
+    font-size: 50px;
+    margin: 20px 0px;
+    font-weight: 500;
+    font-family: "Inter", serif;
+    transition: all .5s ease-in-out;
+}
+
+.icon {
+    filter : invert(var(--iconBefore));
+    width: 30px;
+    transition: all .3s ease-in-out;
+    margin: 10px 10px;
+}
+
+.icon:hover {
+    filter : invert(var(--iconAfter));
+    cursor: pointer;
+}
+
+#alarms {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
+}
+
+#existingAlarms, #actionsRegistry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    transition: all .5s ease-in-out;
+}
+
+#buttonsDiv, #alarmsDiv {
+    display: flex;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+    text-align: center;
+    align-items: center;
+}
+
+.button, a {
+    display: flex;
+    margin: 0px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    transition: all .3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.button:hover {
+    background-color: var(--inverseBack);
+    color: var(--inverseText);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.running {
+    color: var(--runningTime);
+}
+
+.reset {
+    color: var(--resetTime);
+}
+
+.pause {
+    color: var(--pauseTime);
+}
